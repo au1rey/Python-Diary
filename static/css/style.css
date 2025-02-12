@@ -10,6 +10,11 @@ body{
     text-align: center;
 }
 
+.content-area 
+{
+    padding: 60px; 
+}
+
 .wrapper{
     width: 90%;
     margin: 0 auto;
@@ -62,4 +67,30 @@ nav a:hover
     background: white;
     color:black;
     font-weight: 500px;
+}
+
+/* Add a Journal Entry Button */
+.plus-button 
+{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8c635a;
+    color: white;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.plus-button:hover 
+{
+    background-color: white;
+    color: #8c635a;
+    border: 2px solid #8c635a;
 }

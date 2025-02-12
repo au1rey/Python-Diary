@@ -11,11 +11,11 @@
         <header>
             <div class="wrapper">
                 <div class="logo">
-                    <a href="#">Diary Space</a>
+                    <a href="{{ url_for('home') }}">Diary Space</a>
                 </div>
                 <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Journals</a>
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('journals') }}">Journals</a>  
                 </nav>
             </div>
         </header>
@@ -24,14 +24,13 @@
             </div>
         <div class="content-area">
             <div class="wrapper">
-                <h2>Text Details</h2>
+                <h2>Welcome to Diary Space</h2>
     
             </div>
         </div>
     </div>
     <p>
-        Welcome to your Personal Diary Space. This is your personal diary application. Write to your hearts
-        desire and do not fear anyone looking in.
+        In your personal diary space, feel free to decorate and write in a downloadable journal
     </p>
 </body>
 </html>
