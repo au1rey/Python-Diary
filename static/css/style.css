@@ -20,7 +20,8 @@ body{
     margin: 0 auto;
 }
 
-header{
+header
+{
     width: 100%;
     height: 100px;
     background-color: #8c635a;
@@ -53,13 +54,13 @@ nav
 
 nav a
 {
-text-decoration: none;
-font-family: 'Poppins';
-letter-spacing: 4px;
-font-size: 25px;
-color: white;
-padding: 36px 10px;
-margin: 0 1px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    letter-spacing: 4px;
+    font-size: 25px;
+    color: white;
+    padding: 36px 10px;
+    margin: 0 1px;
 }
 
 nav a:hover
@@ -89,6 +90,105 @@ nav a:hover
 }
 
 .plus-button:hover 
+{
+    background-color: white;
+    color: #8c635a;
+    border: 2px solid #8c635a;
+}
+
+/* edit.html */
+
+.sidebar
+{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 100px;
+    left: -250px; /* Untoggled */
+    background-color: tan;
+    overflow-x: hidden;
+    transition: .3s;
+    padding-top: 100px;
+}
+
+.sidebar.open 
+{
+    left: 0;  /* Toggled */
+}
+
+.sidebar .toggle-button
+{
+    font-size: 30px;
+    position: fixed;
+    color: white;
+    background-color: tan;
+    border: none;
+    top: 100px;
+    left: 0px;
+    padding: 10px;
+    z-index: 1000; 
+    cursor: pointer;
+}
+
+.sidebar-content ul 
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-content li
+{
+    padding: 8px 16px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+}
+
+.sidebar-content li:hover 
+{
+    background-color: #4f4040;
+}
+
+/* Design Area */
+.design-area 
+{
+    margin-left: 260px;  
+    padding: 20px;
+    min-height: 500px;  
+    position: relative;
+    background-color: #fff; 
+    margin-top: 120px;
+    text-align: center;
+}
+
+#journal-image 
+{
+    width: 80%; 
+    height: auto;
+    object-fit: contain; 
+    display: block; 
+    margin: 0 auto;
+}
+
+.save-button
+{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8c635a;
+    color: white;
+    font-size: 15px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.save-button:hover 
 {
     background-color: white;
     color: #8c635a;
