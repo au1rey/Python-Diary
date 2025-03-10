@@ -12,7 +12,7 @@ body{
 
 .content-area 
 {
-    padding: 60px; 
+    padding: 90px; 
 }
 
 .wrapper{
@@ -98,76 +98,123 @@ nav a:hover
 
 /* edit.html */
 
-.sidebar
-{
-    height: 100%;
-    width: 250px;
+/* Sidebar and Header Layout */
+.header {
     position: fixed;
-    top: 100px;
-    left: -250px; /* Untoggled */
-    background-color: tan;
-    overflow-x: hidden;
-    transition: .3s;
-    padding-top: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 100;
 }
 
-.sidebar.open 
-{
-    left: 0;  /* Toggled */
+.sidebar {
+    position: fixed;
+    top: 150px;
+    left: -300px;
+    width: 300px;
+    height: calc(100vh - 150px);
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 99;
 }
 
-.sidebar .toggle-button
-{
-    font-size: 30px;
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-toggle {
     position: fixed;
-    color: white;
-    background-color: tan;
-    border: none;
-    top: 100px;
-    left: 0px;
+    left: 15px;
+    top: 105px;
+    z-index: 99;
     padding: 10px;
-    z-index: 1000; 
+    background: white;
+    border: 1px solid #ddd;
     cursor: pointer;
 }
 
-.sidebar-content ul 
-{
-    list-style-type: none;
-    padding: 0;
+/* Sidebar Content Styling */
+.sidebar-content {
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
 }
 
-.sidebar-content li
-{
-    padding: 8px 16px;
-    text-align: center;
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border: none;
+    background: #f0f0f0;
     cursor: pointer;
+    flex: 1;
+}
+
+.tab-button.active {
+    background: #007bff;
     color: white;
 }
 
-.sidebar-content li:hover 
-{
-    background-color: #4f4040;
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Grid Layouts */
+.journal-grid, 
+.sticker-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.journal-item, 
+.sticker-item {
+    aspect-ratio: 1;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 0;
+    margin-top: 150px;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
 }
 
 /* Design Area */
 .design-area 
 {
-    margin-left: 260px;  
+    margin-left: 0;
+    margin-top: 150px; /* Match the sidebar top value */
+    transition: margin-left 0.3s ease;
     padding: 20px;
     min-height: 500px;  
     position: relative;
     background-color: #fff; 
-    margin-top: 120px;
     text-align: center;
 }
 
 #journal-image 
 {
-    width: 80%; 
-    height: auto;
-    object-fit: contain; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
     display: block; 
-    margin: 0 auto;
 }
 
 .save-button
@@ -193,4 +240,89 @@ nav a:hover
     background-color: white;
     color: #8c635a;
     border: 2px solid #8c635a;
+}
+
+.design-options 
+{
+    display: flex;
+    flex-direction: column; /* Stacks buttons vertically */
+    gap: 10px; /* Adds spacing between options */
+}
+
+.design-option 
+{
+    text-align: center;
+}
+
+.design-option-btn 
+{
+    width: 100px;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.design-option p 
+{
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Sidebar preview thumbnails - make them much smaller */
+.journal-preview {
+    position: relative;
+    width: 80px;  /* Much smaller width */
+    height: 113px; /* Maintaining A4 ratio but smaller */
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    margin: 5px;
+}
+
+.journal-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main canvas */
+.canvas-container {
+    width: 100%;
+    max-width: 600px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 450px; /* Use this for centering the canvas */
+}
+
+.journal-canvas {
+    height: 100vh; 
+    width: 100%;
+    aspect-ratio: 0.707/1; /* A4 paper ratio */
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Adjust preview label size */
+.preview-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 4px; /* Smaller padding */
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 10px; /* Smaller font */
+    text-align: center;
 }
