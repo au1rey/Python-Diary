@@ -157,7 +157,7 @@ nav a:hover
 }
 
 .tab-button.active {
-    background: #007bff;
+    background: hsl(28, 31%, 41%);
     color: white;
 }
 
@@ -272,7 +272,7 @@ nav a:hover
     font-size: 14px;
 }
 
-/* Sidebar preview thumbnails - make them much smaller */
+/* Sidebar preview thumbnails */
 .journal-preview {
     position: relative;
     width: 80px;  /* Much smaller width */
@@ -311,7 +311,43 @@ nav a:hover
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     border-radius: 4px;
     overflow: hidden;
+    position: relative; 
     margin: 0 auto;
+}
+
+/* Text Box Controls */
+
+.text-box {
+    position: absolute;
+    min-width: 100px;
+    min-height: 30px;
+    background: transparent;
+    border: 1px dashed #ccc;
+    padding: 5px;
+    cursor: move;
+    resize: both;
+    overflow: auto;
+}
+
+.text-box:focus {
+    outline: none;
+    border: 1px solid #000000;
+}
+
+.canvas-controls .control-button {
+    padding: 4px 18px;
+    background-color: hsl(28, 31%, 41%) !important; /* Tan with !important */
+    color: hsl(30, 24%, 84%);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: -50px;
+    margin-bottom: 40px;
+}
+
+.canvas-controls .control-button:hover {
+    background-color: #e0e0e0 !important;
 }
 
 /* Adjust preview label size */
